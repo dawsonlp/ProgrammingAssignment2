@@ -1,7 +1,10 @@
-## Put comments here that give an overall description of what your
-## functions do
 
-## Write a short comment describing this function
+
+## Return a matrix wrapped in an object that provides a cached version
+## of the output of a function
+## When it is initialized, the cache will be NULL, a caching enabled
+## function can set the cache to its result, and utilize that cache
+## for subsequent calls
 
 makeCacheMatrix <- function(x = matrix()) {
     
@@ -21,10 +24,13 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## This function expects to be passed a caching store for matrices. The first
+## time it is called for a particular instance it will pay the full 
+## computational cost and calculate the function, but subsequent calls will
+## simply return the previously calculated cached result.
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+    ## Return a matrix that is the inverse of 'x'
     m <- x$getmatrix()
     if(!is.null(m)) {
         message("getting cached data")
