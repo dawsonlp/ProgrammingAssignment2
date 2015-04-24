@@ -5,6 +5,8 @@
 ## When it is initialized, the cache will be NULL, a caching enabled
 ## function can set the cache to its result, and utilize that cache
 ## for subsequent calls
+## Note the use of <<- to set the value of a variable in the enclosing
+## function's environment 
 
 makeCacheMatrix <- function(x = matrix()) {
     
